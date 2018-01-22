@@ -11,8 +11,6 @@ import DrawerView from '../views/Drawer/DrawerView';
 import DrawerItems from '../views/Drawer/DrawerNavigatorItems';
 import SafeAreaView from '../views/SafeAreaView';
 
-import NavigatorTypes from './NavigatorTypes';
-
 import type { DrawerViewConfig } from '../views/Drawer/DrawerView';
 import type {
   NavigationState,
@@ -99,8 +97,7 @@ const DrawerNavigator = (
         screen: createNavigator(
           contentRouter,
           routeConfigs,
-          config,
-          NavigatorTypes.DRAWER
+          config
         )((props: React.ElementProps<typeof DrawerScreen>) => (
           <DrawerScreen {...props} />
         )),
@@ -120,8 +117,7 @@ const DrawerNavigator = (
   const navigator = createNavigator(
     drawerRouter,
     routeConfigs,
-    config,
-    NavigatorTypes.DRAWER
+    config
   )((props: DrawerNavigatorProps) => (
     <DrawerView
       {...props}

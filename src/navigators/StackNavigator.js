@@ -5,7 +5,6 @@ import createNavigationContainer from '../createNavigationContainer';
 import createNavigator from './createNavigator';
 import CardStackTransitioner from '../views/CardStack/CardStackTransitioner';
 import StackRouter from '../routers/StackRouter';
-import NavigatorTypes from './NavigatorTypes';
 
 import type {
   NavigationRouteConfigMap,
@@ -54,8 +53,7 @@ export default (
   const navigator = createNavigator(
     router,
     routeConfigMap,
-    stackConfig,
-    NavigatorTypes.STACK
+    stackConfig
   )((props: StackNavigatorProps) => (
     <CardStackTransitioner
       {...props}

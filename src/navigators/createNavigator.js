@@ -11,8 +11,6 @@ import type {
   NavigationScreenProp,
 } from '../TypeDefinition';
 
-import type { NavigatorType } from './NavigatorTypes';
-
 // Props we want createNavigator to Inject
 type RouterProp<S: NavigationState, O: {}> = {
   router: NavigationRouter<S, O>,
@@ -34,8 +32,7 @@ export default function createNavigator<
 >(
   router: NavigationRouter<S, O>,
   routeConfigs?: NavigationRouteConfigMap,
-  navigatorConfig?: NavigatorConfig,
-  navigatorType?: NavigatorType
+  navigatorConfig?: NavigatorConfig
 ): _NavigatorCreator<NavigationViewProps, S, O> {
   return (
     NavigationView: React.ComponentType<RouterProp<S, O> & NavigationViewProps>
@@ -45,7 +42,6 @@ export default function createNavigator<
 
       static routeConfigs = routeConfigs;
       static navigatorConfig = navigatorConfig;
-      static navigatorType = navigatorType;
       static navigationOptions = null;
 
       render() {

@@ -10,8 +10,6 @@ import TabView from '../views/TabView/TabView';
 import TabBarTop from '../views/TabView/TabBarTop';
 import TabBarBottom from '../views/TabView/TabBarBottom';
 
-import NavigatorTypes from './NavigatorTypes';
-
 import type { TabViewConfig } from '../views/TabView/TabView';
 
 import type {
@@ -58,8 +56,7 @@ const TabNavigator = (
   const navigator = createNavigator(
     router,
     routeConfigs,
-    config,
-    NavigatorTypes.TABS
+    config
   )((props: TabNavigatorProps) => (
     <TabView
       {...props}
