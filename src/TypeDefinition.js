@@ -470,6 +470,7 @@ export type NavigationScene = {
   isStale: boolean,
   key: string,
   route: NavigationRoute,
+  options: {},
 };
 
 export type NavigationTransitionProps = {
