@@ -464,13 +464,18 @@ export type NavigationLayout = {
   width: Animated.Value,
 };
 
+export type NavigationSceneDetailRENAME = {
+  options: any,
+  navigation: any, // should be NavigationProp<S, O>
+};
+
 export type NavigationScene = {
   index: number,
   isActive: boolean,
   isStale: boolean,
   key: string,
   route: NavigationRoute,
-  options: {},
+  detailGREAT_NAME: NavigationSceneDetailRENAME,
 };
 
 export type NavigationTransitionProps = {

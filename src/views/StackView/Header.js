@@ -67,10 +67,7 @@ class Header extends React.PureComponent<Props, State> {
   };
 
   _getScreenOptions(scene) {
-    const { detailsRENAME_ME } = this.props;
-    const detail = detailsRENAME_ME.find(d => d.state.key === scene.route.key);
-    const { options } = detail;
-    return options;
+    return scene.detailGREAT_NAME.options;
   }
 
   _getHeaderTitleString(scene: NavigationScene): ?string {

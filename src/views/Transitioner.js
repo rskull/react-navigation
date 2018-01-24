@@ -75,7 +75,12 @@ class Transitioner extends React.Component<Props, State> {
       layout,
       position: new Animated.Value(this.props.navigation.state.index),
       progress: new Animated.Value(1),
-      scenes: NavigationScenesReducer([], this.props.navigation.state),
+      scenes: NavigationScenesReducer(
+        [],
+        this.props.navigation.state,
+        null,
+        this.props.detailsRENAME_ME
+      ),
     };
 
     this._prevTransitionProps = null;
@@ -102,7 +107,8 @@ class Transitioner extends React.Component<Props, State> {
     const nextScenes = NavigationScenesReducer(
       this.state.scenes,
       nextProps.navigation.state,
-      this.props.navigation.state
+      this.props.navigation.state,
+      nextProps.detailsRENAME_ME
     );
 
     if (nextScenes === this.state.scenes) {

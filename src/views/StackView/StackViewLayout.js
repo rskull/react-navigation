@@ -138,9 +138,7 @@ class StackViewLayout extends React.Component<Props> {
   // };
 
   _renderHeader(scene: NavigationScene, headerMode: HeaderMode): ?React.Node {
-    const { detailsRENAME_ME } = this.props;
-    const detail = detailsRENAME_ME.find(d => d.state.key === scene.route.key);
-    const { options } = detail;
+    const { options } = scene.detailGREAT_NAME;
     const { header } = options;
 
     if (typeof header !== 'undefined' && typeof header !== 'function') {
@@ -162,7 +160,6 @@ class StackViewLayout extends React.Component<Props> {
       ...passProps,
       scene,
       mode: headerMode,
-      detailsRENAME_ME: detailsRENAME_ME,
       leftInterpolator: headerLeftInterpolator,
       titleInterpolator: headerTitleInterpolator,
       rightInterpolator: headerRightInterpolator,
@@ -233,8 +230,7 @@ class StackViewLayout extends React.Component<Props> {
     } = this.props;
     const { index } = navigation.state;
     const isVertical = mode === 'modal';
-    const detail = detailsRENAME_ME.find(d => d.state.key === scene.route.key);
-    const { options } = detail;
+    const { options } = scene.detailGREAT_NAME;
 
     const gestureDirectionInverted = options.gestureDirection === 'inverted';
 
@@ -272,11 +268,7 @@ class StackViewLayout extends React.Component<Props> {
           : currentDragPosition - currentDragDistance;
         // Compare to the gesture distance relavant to card or modal
 
-        const { detailsRENAME_ME } = this.props;
-        const detail = detailsRENAME_ME.find(
-          d => d.state.key === scene.route.key
-        );
-        const { options } = detail;
+        const { options } = scene.detailGREAT_NAME;
 
         const {
           gestureResponseDistance: userGestureResponseDistance = {},
@@ -401,9 +393,7 @@ class StackViewLayout extends React.Component<Props> {
   }
 
   _renderInnerScene(scene: NavigationScene): React.Node {
-    const { detailsRENAME_ME } = this.props;
-    const detail = detailsRENAME_ME.find(d => d.state.key === scene.route.key);
-    const { options, navigation, getComponent } = detail;
+    const { options, navigation, getComponent } = scene.detailGREAT_NAME;
     const SceneComponent = getComponent();
 
     const { screenProps } = this.props;

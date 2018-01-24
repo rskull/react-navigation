@@ -39,9 +39,11 @@ class StackView extends React.Component<Props> {
   };
 
   render() {
+    const { index, isTransitioning, detailsRENAME_ME } = this.props;
     return (
       <Transitioner
         configureTransition={this._configureTransition}
+        detailsRENAME_ME={detailsRENAME_ME}
         navigation={this.props.navigation}
         render={this._render}
         onTransitionStart={this.props.onTransitionStart}
